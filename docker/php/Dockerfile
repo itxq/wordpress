@@ -4,8 +4,8 @@ FROM php:7.4-fpm
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' > /etc/timezone
 
 # 更换源
-RUN sed -i "s@http://deb.debian.org@http://mirrors.aliyun.com@g" /etc/apt/sources.list \
-   && sed -i "s@http://security.debian.org@http://mirrors.aliyun.com@g" /etc/apt/sources.list \
+RUN sed -i "s@http://deb.debian.org@https://mirrors.aliyun.com@g" /etc/apt/sources.list \
+   && sed -i "s@http://security.debian.org@https://mirrors.aliyun.com@g" /etc/apt/sources.list \
     && rm -Rf /var/lib/apt/lists/*
 
 # persistent dependencies
